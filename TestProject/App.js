@@ -1,13 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-
-class Greeting extends React.Component {
-  render() {
-    return (
-      <Text>Hello {this.props.name}!</Text>
-    );
-  }
-}
+import Greeting from './Greeting'
 
 export default class App extends React.Component {
   render() {
@@ -15,13 +8,15 @@ export default class App extends React.Component {
       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
     };
     var names = {
-      a: "A",
-      b: "B"
+      a: "Letra A",
+      b: "Letra B"
     }
+
     return (
       <View style={styles.container}>
         <Image source={pic} style={{width: 193, height: 110}}/>
         <Text>Hello World</Text>
+        <Greeting name={names.a}></Greeting>
         <Greeting name={names.b}></Greeting>
       </View>
     );
